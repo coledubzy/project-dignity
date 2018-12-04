@@ -35,8 +35,8 @@ public class JFrameTesting extends JPanel
    public void init() throws IOException
    {
       JFrame window = new JFrame("Project"); //use either SpringLayout or GridBagLayout(probably better one)
-      GridBagLayout gbl = new GridBagLayout();
-      //find out about gridbag
+      GridBagLayout gbl = new GridBagLayout(); //doing nothing atm
+      
       JButton b = new JButton("Start");
       BufferedImage bg = ImageIO.read(new File("hawaii.jpg"));
       BufferedImage bg2 = ImageIO.read(new File("500px.jpg"));
