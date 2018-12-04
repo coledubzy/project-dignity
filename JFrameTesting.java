@@ -36,7 +36,7 @@ public class JFrameTesting extends JPanel
    {
       JFrame window = new JFrame("Project"); //use either SpringLayout or GridBagLayout(probably better one)
       GridBagLayout gbl = new GridBagLayout();
-      
+      //find out about gridbag
       JButton b = new JButton("Start");
       BufferedImage bg = ImageIO.read(new File("hawaii.jpg"));
       BufferedImage bg2 = ImageIO.read(new File("500px.jpg"));
