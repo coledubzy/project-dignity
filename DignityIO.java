@@ -4,33 +4,38 @@ import java.io.*;
 public class DignityIO
 {
    private File file;
-   private ArrayList<String> dares = new ArrayList<String>(); //should later be an arraylist of dares
+   private ArrayList<Dare> dares = new ArrayList<Dare>();
    
    public DignityIO(File f)
    {
       this.file = f;
    }
    
-   public void readFile() throws FileNotFoundException //reads the main file
+   public void readFile() throws FileNotFoundException
    {
       Scanner console = new Scanner(file);
       while (console.hasNextLine())
       {
-         dares.add(console.nextLine());
+         dares.add(new Dare(Integer.parseInt(console.nextLine()), console.nextLine()));
       }
    }
    
-   public String toString() //prints all of the dares with square brackets and commas
+   public String toString()
    {
-      String print = "[" + dares.get(0);
+      String print = "[" + dares.get(0).getText();
       for (int i = 1; i < dares.size(); i++)
       {
-         print += (", " + dares.get(i));
+         print += (", " + dares.get(i).getText());
       }
       return print + "]";
    }
    
-   public static void main(String[] args) throws FileNotFoundException //client testing
+   public ArrayList<Dare> getList()
+   {
+      return this.dares;
+   }
+   
+   public static void main(String[] args) throws FileNotFoundException
    {
       DignityIO oof = new DignityIO(new File("dares.txt"));
       oof.readFile();
