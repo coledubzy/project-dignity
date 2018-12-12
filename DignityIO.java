@@ -39,6 +39,10 @@ public class DignityIO
    {
       DignityIO oof = new DignityIO(new File("dares.txt"));
       oof.readFile();
+      DareList yeouch = new DareList();
+      yeouch.addDare(4, "add this dare");
+      yeouch.mergeLists(oof.getList());
       System.out.println(oof);
+      System.out.println(yeouch);
    }
 }
