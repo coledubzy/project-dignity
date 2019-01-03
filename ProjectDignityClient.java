@@ -9,6 +9,7 @@ public class ProjectDignityClient {
    private Scanner scan = new Scanner(System.in);
    private DareList dares = new DareList();
    private PlayerList players = new PlayerList();
+   private int penalty = 0;
    private int turn;
    private static ProjectDignityClient pdc = new ProjectDignityClient();
 
@@ -149,6 +150,7 @@ public class ProjectDignityClient {
       }
       else {
          System.out.println("Rip u \n");
+         this.players.getPlayer(turn).addScore(this.penalty);
       }
       this.dares.useFirstDare();
    }
@@ -168,6 +170,11 @@ public class ProjectDignityClient {
       int wscore = Integer.parseInt(this.scan.nextLine());
       this.players.setWinningScore(wscore); //changes the winning score
       System.out.println("Winning score is now: " + this.players.getWinningScore()); //confirms the winning score settings change
+      
+      System.out.println("Incomplete Dare Penalty (type an integer): ");
+      this.penalty = Integer.parseInt(this.scan.nextLine());
+      System.out.println("Incomplete Dare Penalty is now: " + this.penalty); //confirms the penalty settings change
+      
       System.out.println("this mans settings is runnin over here"); //test message to make sure settings is ran
    }
 }
