@@ -17,7 +17,6 @@ public class ProjectDignityClient {
       //load title screen
       System.out.println("Welcome to Project Dignity");
       pdc.runProgram(); //runs the main program
-      pdc.printLeaderboard(); //prints the players with the points next to their name
    }
 
    public void runProgram() throws FileNotFoundException {
@@ -34,6 +33,7 @@ public class ProjectDignityClient {
       
       int winner = beginTurns();
       System.out.println("Congratulations, " + this.players.getPlayer(winner).getName() + "! You win! :-)");
+      printLeaderboard(); //prints the players with the points next to their name
    }
    
    public int start() {
