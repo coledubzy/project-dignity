@@ -19,7 +19,7 @@ public class ProjectDignityClient {
       pdc.runProgram(); //runs the main program
    }
 
-   public void runProgram() throws FileNotFoundException {
+   public void runProgram() throws FileNotFoundException {//gets around problems with static methods
       int mode = start();
       modeProcess(mode);
       System.out.println("Would you like to go to settings? y/n"); //asks if they want to set the game settings
@@ -42,13 +42,13 @@ public class ProjectDignityClient {
       String mode = this.scan.nextLine().toLowerCase();
       //returns corresponding mode to main based off input
       if (mode.equals("c")) {
-         return 0;
+         return 0;//will run game with custom dares
       }
       else if (mode.equals("p")) {
-         return 1;
+         return 1;//will run game with preset dares from text file
       }
       else if (mode.equals("s")) {
-         return 2;
+         return 2;//will run settings
       }
       return -1;
    }
@@ -118,10 +118,10 @@ public class ProjectDignityClient {
       this.dares.mergeLists(dio.getList());
    }
    
-   public int beginTurns() {
-      this.players.randomizeOrder();
-      this.dares.randomizeOrder();
-      //System.out.println(this.players);
+   public int beginTurns() {//starts the games turn sequence
+      this.players.randomizeOrder();//randomizes order of players in playerList
+      this.dares.randomizeOrder();//randomizes order of dares in dareList
+      //System.out.println(this.players); //for testing
       //System.out.println(this.dares);
       boolean go = true;
       int winner = -1;
@@ -129,7 +129,7 @@ public class ProjectDignityClient {
          if (this.turn >= players.getSize()) {
             this.turn = 0;
          }
-         runTurn();
+         runTurn();//runs an iteration of the turn sequence
          winner = this.players.checkWinningScore();
          if (winner > -1) {
             go = false;
