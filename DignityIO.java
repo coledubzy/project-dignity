@@ -15,8 +15,8 @@ public class DignityIO
    {
       Scanner console = new Scanner(file);
       while (console.hasNextLine())
-      {
-         dares.addDare(new Dare(Integer.parseInt(console.nextLine()), console.nextLine()));
+      { //parses for an integer on the next line and then a dare on the next line
+         dares.addDare(new Dare(Integer.parseInt(console.nextLine()), console.nextLine())); 
       }
    }
    
@@ -30,20 +30,20 @@ public class DignityIO
       return print + "]";
    }
    
-   public DareList getList()
+   public DareList getList() //returns the list
    {
       return this.dares;
    }
    
-   public static void main(String[] args) throws FileNotFoundException //testing
+   public static void main(String[] args) throws FileNotFoundException //test case
    {
-      DignityIO oof = new DignityIO(new File("dares.txt"));
-      oof.readFile();
-      DareList yeouch = new DareList();
-      yeouch.addDare(4, "add this dare");
-      yeouch.mergeLists(oof.getList());
-      System.out.println(oof);
-      System.out.println(oof.getList().getSize());
-      System.out.println(yeouch);
+      DignityIO di = new DignityIO(new File("dares.txt"));
+      di.readFile();
+      DareList dlist = new DareList();
+      dlist.addDare(4, "add this dare");
+      dlist.mergeLists(di.getList());
+      System.out.println(di);
+      System.out.println(di.getList().getSize());
+      System.out.println(dlist);
    }
 }
