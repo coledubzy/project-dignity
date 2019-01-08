@@ -3,7 +3,7 @@ public class Player {
    private int score;
    private String name;
    
-   public Player() {
+   public Player() { //no argument constructor
       this.score = 0;
       this.name = "null";
    }
@@ -25,11 +25,11 @@ public class Player {
       this.score = score;
    }
    
-   public void addScore(int bread) {
-      this.score += bread;
+   public void addScore(int points) {
+      this.score += points;
    }
  
-   public boolean equals(Player other) {
+   public boolean equals(Player other) { //mainly used if the player tries to enter the same name
       boolean equals = false;
       if (this.name.equals(other.getName())) {
          equals = true;
