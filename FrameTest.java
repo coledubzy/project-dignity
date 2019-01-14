@@ -2,15 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.imageio.ImageIO;
 
 public class FrameTest extends JFrame {
 
    private JPanel mousepanel;
    private JLabel statusbar;
-   private ImageIcon image;
-   private JLabel label;
-   private ImageIcon image2;
-   private JLabel label2;
+   //private ImageIcon image;
+   //private JLabel label;
+   //private ImageIcon image2;
+   //private JLabel label2;
+   
+   
 
 
    

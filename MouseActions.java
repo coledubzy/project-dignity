@@ -7,7 +7,8 @@ public class MouseActions {
 
    public static void main(String[] args) {
    
-      FrameTest f = new FrameTest();
+      //FrameTest f = new FrameTest();
+      ImagePanel f = new ImagePanel();
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       //f.pack();
       f.setSize(500, 500);
