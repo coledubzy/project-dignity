@@ -10,7 +10,7 @@ public class StartScreen {
       WelcomeScreen f = new WelcomeScreen();
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       //f.setExtendedState(JFrame.MAXIMIZED_BOTH);
-      f.setSize(1170, 700);
+      f.setSize(1365, 768);
       f.setVisible(true);
    
    }

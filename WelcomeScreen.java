@@ -28,7 +28,7 @@ public class WelcomeScreen extends JFrame {
       
       public void mouseClicked(MouseEvent event) {
          statusbar.setText(String.format("Clicked at %d, %d", event.getX(), event.getY()));
-         if (event.getX() > 200) {
+         if (event.getX() > 559 && event.getX() < 828 && event.getY() > 552 && event.getY() < 649) {
             openNextScreen();
          }
          else {
@@ -68,7 +68,7 @@ public class WelcomeScreen extends JFrame {
          CustomDaresScreen c = new CustomDaresScreen();
          c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          c.pack();
-         c.setSize(1200, 750);
+         c.setSize(1365, 768);
          c.setVisible(true);
    
       }

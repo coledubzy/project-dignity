@@ -28,12 +28,12 @@ public class CustomDaresScreen extends JFrame {
       
       public void mouseClicked(MouseEvent event) {
          statusbar.setText(String.format("Clicked at %d, %d", event.getX(), event.getY()));
-         if (event.getX() > 200) {
-            openNextScreen();
-         }
-         else {
-            mousepanel.setBackground(Color.WHITE);
-         }  
+          if (event.getX() > 408 && event.getX() < 980 && event.getY() > 390 && event.getY() < 667) {
+             openDarePane();
+          }
+          else {
+             mousepanel.setBackground(Color.WHITE);
+          }  
       }
       
       public void mousePressed(MouseEvent event) {
@@ -72,6 +72,33 @@ public class CustomDaresScreen extends JFrame {
 //          f.setVisible(true);
    
       }
+      
+      public void openDarePane() {
+         
+         int g = -1;
+         while (g < 0) {           
+            String inputDare = JOptionPane.showInputDialog("Please enter your dare (or quit to stop)");          
+            if (inputDare.length() > 0 && !inputDare.equalsIgnoreCase("quit")) {   
+               System.out.println(inputDare);          
+               String inputScore = JOptionPane.showInputDialog("Please enter your dare's score");   
+                  if (inputScore.length() > 0) {
+                     System.out.println(inputScore);
+                  }
+                  else {
+                     System.out.println("Error");
+                  }           
+            }
+            else if (inputDare.equalsIgnoreCase("quit")) {
+               g = 4;
+            }
+            else {
+               System.out.println("Error");
+            }
+         } 
+         
+      }
+               
+               
 
          
    
