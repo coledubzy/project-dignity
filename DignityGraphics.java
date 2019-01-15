@@ -35,10 +35,9 @@ public class DignityGraphics
       int width = frame.getSize().width;
       int height = frame.getSize().height;
       Image sized = this.sbackground.getScaledInstance(width, height, Image.SCALE_DEFAULT);
-      ImagePanel imgpanel = new ImagePanel(sized);
-      imgpanel.repaint();
+      this.sbackground = (new ImageIcon(sized)).getImage();
+      ImagePanel imgpanel = new ImagePanel(this.sbackground);
       frame.setContentPane(imgpanel);
-      frame.repaint();
       System.out.println(width + ", " + height);
    }
 }
