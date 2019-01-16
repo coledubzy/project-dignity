@@ -4,15 +4,15 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class CustomDaresScreen extends JFrame {
+public class EnterPlayersScreen extends JFrame {
 
-   private ImagePanelTwo mousepanel;
+   private ImagePanelThree mousepanel;
    private JLabel statusbar;
    
    public CustomDaresScreen() {
       super("test");//super class constructor needs a string for a title
       
-      mousepanel = new ImagePanelTwo();
+      mousepanel = new ImagePanelThree();
       mousepanel.setBackground(Color.WHITE);
       add(mousepanel, BorderLayout.CENTER);
       
@@ -27,10 +27,10 @@ public class CustomDaresScreen extends JFrame {
    
    class HandlerClass implements MouseListener, MouseMotionListener {
    
-      private DareList list;
+      private PlayerList list;
       
       public HandlerClass() {
-         this.list = new DareList();
+         this.list = new PlayerList();
       }
       
       public void mouseClicked(MouseEvent event) {

@@ -24,7 +24,7 @@ public class WelcomeScreen extends JFrame {
       mousepanel.addMouseMotionListener(handler);     
    }
    
-   private class HandlerClass implements MouseListener, MouseMotionListener {
+   class HandlerClass implements MouseListener, MouseMotionListener {
       
       public void mouseClicked(MouseEvent event) {
          statusbar.setText(String.format("Clicked at %d, %d", event.getX(), event.getY()));
