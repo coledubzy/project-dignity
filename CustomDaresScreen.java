@@ -38,6 +38,10 @@ public class CustomDaresScreen extends JFrame {
           if (event.getX() > 408 && event.getX() < 980 && event.getY() > 390 && event.getY() < 667) {
              openDarePane();
           }
+          if (event.getX() > 1010 && event.getX() < 1317 && event.getY() > 600 && event.getY() < 708) {
+             openNextScreen();
+          }
+
           else {
              mousepanel.setBackground(Color.WHITE);
           }  
@@ -76,11 +80,11 @@ public class CustomDaresScreen extends JFrame {
    
       public void openNextScreen() {
          
-         // FrameTest f = new FrameTest();
-//          f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//          f.pack();
-//          f.setSize(1200, 750);
-//          f.setVisible(true);
+          TurnScreen t = new TurnScreen();
+          t.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          t.pack();
+          t.setSize(1365, 768);
+          t.setVisible(true);
    
       }
       

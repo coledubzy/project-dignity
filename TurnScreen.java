@@ -4,15 +4,15 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class WelcomeScreen extends JFrame {
+public class TurnScreen extends JFrame {
 
-   private ImagePanel mousepanel;
+   private ImagePanelFour mousepanel;
    private JLabel statusbar;
    
-   public WelcomeScreen() {
+   public TurnScreen() {
       super("test");//super class constructor needs a string for a title
       
-      mousepanel = new ImagePanel();
+      mousepanel = new ImagePanelFour();
       mousepanel.setBackground(Color.WHITE);
       add(mousepanel, BorderLayout.CENTER);
       
@@ -78,8 +78,3 @@ public class WelcomeScreen extends JFrame {
   }
       
 }
-  
-   
-
-
-

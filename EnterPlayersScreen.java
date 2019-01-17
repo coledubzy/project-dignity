@@ -9,7 +9,7 @@ public class EnterPlayersScreen extends JFrame {
    private ImagePanelThree mousepanel;
    private JLabel statusbar;
    
-   public CustomDaresScreen() {
+   public EnterPlayersScreen() {
       super("test");//super class constructor needs a string for a title
       
       mousepanel = new ImagePanelThree();
@@ -35,15 +35,18 @@ public class EnterPlayersScreen extends JFrame {
       
       public void mouseClicked(MouseEvent event) {
          statusbar.setText(String.format("Clicked at %d, %d", event.getX(), event.getY()));
-          if (event.getX() > 408 && event.getX() < 980 && event.getY() > 390 && event.getY() < 667) {
-             openDarePane();
+          if (event.getX() > 424 && event.getX() < 932 && event.getY() > 390 && event.getY() < 424) {
+             openPlayerPane();
+          }
+          else if (event.getX() > 1010 && event.getX() < 1317 && event.getY() > 589 && event.getY() < 708) {
+             openNextScreen();
           }
           else {
              mousepanel.setBackground(Color.WHITE);
           }  
       }
       
-      public DareList getList() {
+      public PlayerList getList() {
          return this.list;
       }
       
@@ -76,38 +79,32 @@ public class EnterPlayersScreen extends JFrame {
    
       public void openNextScreen() {
          
-         // FrameTest f = new FrameTest();
-//          f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//          f.pack();
-//          f.setSize(1200, 750);
-//          f.setVisible(true);
+          CustomDaresScreen c = new CustomDaresScreen();
+          c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          //f.pack();
+          c.setSize(1365, 768);
+          c.setVisible(true);
    
       }
       
-      public void openDarePane() {
+      public void openPlayerPane() {
          
          int g = -1;
          while (g < 0) {           
-            String inputDare = JOptionPane.showInputDialog("Please enter your dare (or quit to stop)");        
-            if (inputDare.length() > 0 && !inputDare.equalsIgnoreCase("quit")) {   
-               System.out.println(inputDare);          
-               String inputScore = JOptionPane.showInputDialog("Please enter your dare's score");
-               int score = Integer.parseInt(inputScore);   
-                  if (inputScore.length() > 0) {
-                     //System.out.println(inputScore);
-                     this.list.addDare(score, inputDare);
-                  }
-                  else {
-                     System.out.println("Error");
-                  }           
+            String inputPlayer = JOptionPane.showInputDialog("Please enter Player Name (or quit to stop)");        
+            if (inputPlayer.length() > 0 && !inputPlayer.equalsIgnoreCase("quit")) {   
+               System.out.println(inputPlayer); 
+               Player p = new Player(inputPlayer);         
+               this.list.addPlayer(p);
             }
-            else if (inputDare.equalsIgnoreCase("quit")) {
+            else if (inputPlayer.equalsIgnoreCase("quit")) {
                g = 4;
             }
             else {
                System.out.println("Error");
             }
          } 
+         
          
       }
                
