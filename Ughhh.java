@@ -5,9 +5,9 @@ import javax.swing.*;
 public class Ughhh extends JPanel
 {
    private static Ughhh oof = new Ughhh();
-   private Font pvalue = new Font("Comic Sans MS", Font.PLAIN, 20);
+   private Font pvalue = new Font("Times New Roman", Font.PLAIN, 20);
    private Font name = new Font("Comic Sans MS", Font.PLAIN, 50);
-   private Font dare = new Font("Comic Sans MS", Font.PLAIN, 100);
+   private Font dare = new Font("Gulim", Font.PLAIN, 100);
    private int width;
    private int height;
 
@@ -34,7 +34,8 @@ public class Ughhh extends JPanel
    {
       JFrame frame = new JFrame("Test");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+      frame.setSize(1365, 768);
+     // frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
       frame.setVisible(true);
       this.width = frame.getWidth();
       this.height = frame.getHeight();
@@ -48,13 +49,13 @@ public class Ughhh extends JPanel
    
    public void paintComponent(Graphics g)
    {
-      g.drawImage((new ImageIcon("ProjectDignityTitle.png").getImage()), 0, 0, null);
+      g.drawImage((new ImageIcon("TurnDisplayScreen.png").getImage()), 0, 0, null);
       g.setFont(this.dare);
       g.setColor(Color.BLUE);
-      g.drawString("Doing a dare here", (width / 4), height / 2);
+      g.drawString("Doing a dare here", 425, 450);
       g.setFont(this.name);
-      g.drawString("Name", 600, 300);
+      g.drawString("Name", 790, 240);
       g.setFont(this.pvalue);
-      g.drawString("Point Value", 200, 500);
+      g.drawString("Point Value", 180, 515);
    }
 }
